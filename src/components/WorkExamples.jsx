@@ -62,13 +62,13 @@ const WorkExamples = () => {
   return (
     <section id="work" className="py-20 bg-gray-900" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-6xl text-left font-bold text-white mb-4 opacity-0 animate-fade-in-up">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 opacity-0 animate-fade-in-up">
             Featured Projects
           </h2>
         </div>
 
-        <div className="space-y-12">
+        <div className="space-y-8 sm:space-y-12">
           {projects.map((project, index) => (
             <div
               key={index}
@@ -83,21 +83,21 @@ const WorkExamples = () => {
                 transitionDelay: `${index * 200}ms`
               }}
             >
-              <div className="group bg-gray-800/80 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02]">
+              <div className="group bg-gray-800/80 rounded-xl sm:rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02]">
                 <div className="lg:flex">
                   {/* Image Section */}
                   <div className={`relative overflow-hidden lg:w-1/2 ${index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-64 lg:h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      className="w-full h-48 sm:h-64 lg:h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     />
                     
                     {/* Animated Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     
                     {/* Category Badge */}
-                    <div className="absolute top-4 left-4 transform group-hover:scale-110 transition-transform duration-300">
+                    <div className="absolute top-3 sm:top-4 left-3 sm:left-4 transform group-hover:scale-110 transition-transform duration-300">
                       <span className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg">
                         {project.category}
                       </span>

@@ -195,59 +195,59 @@ const ClientReviews = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Professional Header Section */}
-        <div ref={titleRef} className="text-center mb-20">
+        <div ref={titleRef} className="text-center mb-12 sm:mb-16 lg:mb-20">
           <div className="inline-block">
-            <span className="text-blue-400 text-sm font-semibold tracking-wider uppercase mb-2 block">
+            <span className="text-blue-400 text-xs sm:text-sm font-semibold tracking-wider uppercase mb-2 block">
               Client Excellence
             </span>
-            <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">
               What Our <span className="text-transparent bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text">Partners</span> Say
             </h2>
-            <div className="w-32 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-6"></div>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed">
+            <div className="w-24 sm:w-32 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-4 sm:mb-6"></div>
+            <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed px-4">
               Trusted by industry leaders worldwide to deliver exceptional technology solutions
             </p>
           </div>
         </div>
 
         {/* Client Statistics */}
-        <div ref={statsRef} className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20">
+        <div ref={statsRef} className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 mb-12 sm:mb-16 lg:mb-20">
           {clientStats.map((stat, index) => {
             const IconComponent = stat.icon;
             return (
               <div key={index} className="text-center group">
-                <div className="w-20 h-20 bg-gradient-to-br from-blue-600/20 to-purple-600/20 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 border border-blue-500/20">
-                  <IconComponent className="text-blue-400 text-2xl" />
+                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-blue-600/20 to-purple-600/20 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300 border border-blue-500/20">
+                  <IconComponent className="text-blue-400 text-lg sm:text-xl md:text-2xl" />
                 </div>
-                <div className="text-4xl font-bold text-white mb-2">{stat.number}</div>
-                <div className="text-blue-200 text-sm font-medium">{stat.label}</div>
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-1 sm:mb-2">{stat.number}</div>
+                <div className="text-blue-200 text-xs sm:text-sm font-medium">{stat.label}</div>
               </div>
             );
           })}
         </div>
 
         {/* Featured Testimonial Spotlight */}
-        <div className="mb-20">
-          <div className="bg-gradient-to-br from-gray-800/60 to-gray-900/80 backdrop-blur-sm rounded-3xl p-12 border border-gray-700/50 shadow-2xl">
-            <div ref={testimonialRef} className="lg:flex items-center space-y-8 lg:space-y-0 lg:space-x-12">
+        <div className="mb-12 sm:mb-16 lg:mb-20">
+          <div className="bg-gradient-to-br from-gray-800/60 to-gray-900/80 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 border border-gray-700/50 shadow-2xl">
+            <div ref={testimonialRef} className="lg:flex items-center space-y-6 sm:space-y-8 lg:space-y-0 lg:space-x-12">
               {/* Client Image & Info */}
               <div className="lg:w-1/3 text-center lg:text-left">
                 <div className="relative inline-block">
                   <img
                     src={reviews[currentTestimonial]?.image}
                     alt={reviews[currentTestimonial]?.name}
-                    className="w-32 h-32 rounded-full mx-auto lg:mx-0 object-cover border-4 border-blue-500/30 shadow-lg"
+                    className="w-24 h-24 sm:w-32 sm:h-32 rounded-full mx-auto lg:mx-0 object-cover border-4 border-blue-500/30 shadow-lg"
                   />
-                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-green-500 rounded-full border-4 border-gray-800"></div>
+                  <div className="absolute -top-1 -right-1 sm:-top-2 sm:-right-2 w-6 h-6 sm:w-8 sm:h-8 bg-green-500 rounded-full border-3 sm:border-4 border-gray-800"></div>
                 </div>
-                <div className="mt-6">
-                  <h4 className="text-2xl font-bold text-white mb-1">
+                <div className="mt-4 sm:mt-6">
+                  <h4 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-1">
                     {reviews[currentTestimonial]?.name}
                   </h4>
-                  <p className="text-blue-400 font-medium mb-1">
+                  <p className="text-blue-400 font-medium mb-1 text-sm sm:text-base">
                     {reviews[currentTestimonial]?.position}
                   </p>
-                  <p className="text-gray-400 text-sm">
+                  <p className="text-gray-400 text-xs sm:text-sm">
                     {reviews[currentTestimonial]?.company}
                   </p>
                   <span className="inline-block mt-2 px-3 py-1 bg-blue-600/20 text-blue-300 text-xs rounded-full">

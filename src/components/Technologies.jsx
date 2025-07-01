@@ -337,19 +337,21 @@ const Technologies = () => {
 
   const TechCard = ({ tech }) => (
     <div 
-      className="tech-card flex-shrink-0 w-80 mx-4 bg-gray-800/60 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50 hover:border-blue-500/50 transition-all duration-500 group"
-      style={{ minWidth: '320px' }}
+      className="tech-card flex-shrink-0 w-72 sm:w-80 mx-2 sm:mx-4 bg-gray-800/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 md:p-8 border border-gray-700/50 hover:border-blue-500/50 transition-all duration-500 group"
+      style={{ minWidth: '280px' }}
     >
-      <div className="flex items-center space-x-6">
-        <div className="flex-shrink-0 w-20 h-20 bg-gray-700/50 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-          {tech.icon}
+      <div className="flex items-center space-x-3 sm:space-x-4 md:space-x-6">
+        <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-gray-700/50 rounded-xl md:rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+          <div className="scale-75 sm:scale-90 md:scale-100">
+            {tech.icon}
+          </div>
         </div>
-        <div className="flex-1">
-          <div className="flex items-center justify-between mb-2">
-            <h3 className="text-2xl font-bold text-white group-hover:text-blue-300 transition-colors duration-300">
+        <div className="flex-1 min-w-0">
+          <div className="flex items-center justify-between mb-1 sm:mb-2">
+            <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white group-hover:text-blue-300 transition-colors duration-300 truncate">
               {tech.name}
             </h3>
-            <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
+            <span className={`px-2 sm:px-3 py-1 rounded-full text-xs font-semibold flex-shrink-0 ml-2 ${
               tech.expertise === 'Expert' ? 'bg-green-600/20 text-green-300' :
               tech.expertise === 'Advanced' ? 'bg-blue-600/20 text-blue-300' :
               'bg-yellow-600/20 text-yellow-300'
@@ -357,16 +359,16 @@ const Technologies = () => {
               {tech.expertise}
             </span>
           </div>
-          <p className="text-blue-400 font-medium mb-2">{tech.category}</p>
+          <p className="text-blue-400 font-medium mb-1 sm:mb-2 text-sm sm:text-base">{tech.category}</p>
           <div className="flex items-center space-x-2">
-            <div className="flex-1 bg-gray-600 rounded-full h-2">
+            <div className="flex-1 bg-gray-600 rounded-full h-1.5 sm:h-2">
               <div className={`h-full rounded-full ${
                 tech.expertise === 'Expert' ? 'bg-green-500 w-full' :
                 tech.expertise === 'Advanced' ? 'bg-blue-500 w-4/5' :
                 'bg-yellow-500 w-3/5'
               }`}></div>
             </div>
-            <span className="text-gray-400 text-sm">{
+            <span className="text-gray-400 text-xs sm:text-sm flex-shrink-0">{
               tech.expertise === 'Expert' ? '90%+' :
               tech.expertise === 'Advanced' ? '80%' : '60%'
             }</span>
@@ -394,11 +396,11 @@ const Technologies = () => {
               <span className="title-element text-blue-400 text-sm font-semibold tracking-wider uppercase mb-4 block">
                 Technology Excellence
               </span>
-              <h2 className="title-element text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-8 leading-tight">
+              <h2 className="title-element text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-bold text-white mb-6 sm:mb-8 leading-tight">
                 Our <span className="text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text">Technology</span> Stack
               </h2>
-              <div className="gradient-bar h-2 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 mx-auto mb-8 rounded-full shadow-lg shadow-blue-500/25"></div>
-              <p className="title-element text-gray-300 text-xl max-w-4xl mx-auto leading-relaxed font-light">
+              <div className="gradient-bar h-1 sm:h-2 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 mx-auto mb-6 sm:mb-8 rounded-full shadow-lg shadow-blue-500/25"></div>
+              <p className="title-element text-gray-300 text-base sm:text-lg md:text-xl max-w-4xl mx-auto leading-relaxed font-light px-4">
                 Cutting-edge technologies powering enterprise-grade solutions across the globe
               </p>
             </div>
@@ -418,9 +420,9 @@ const Technologies = () => {
 
         {/* Frontend Technologies - Left to Right Scroll - Full Width */}
         <div ref={section1Ref} className="mb-16 w-full">
-          <div className="section-header mb-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h3 className="text-2xl font-bold text-white mb-2">Frontend & UI Technologies</h3>
-            <p className="text-gray-400">Modern user interfaces and client-side development</p>
+          <div className="section-header mb-6 sm:mb-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 className="text-xl sm:text-2xl font-bold text-white mb-1 sm:mb-2">Frontend & UI Technologies</h3>
+            <p className="text-gray-400 text-sm sm:text-base">Modern user interfaces and client-side development</p>
           </div>
           <div className="w-full overflow-hidden">
             <div ref={scrollContainer1Ref} className="flex will-change-transform">
@@ -434,9 +436,9 @@ const Technologies = () => {
 
         {/* Backend Technologies - Right to Left Scroll - Full Width */}
         <div ref={section2Ref} className="mb-16 w-full">
-          <div className="section-header mb-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h3 className="text-2xl font-bold text-white mb-2">Backend & Server Technologies</h3>
-            <p className="text-gray-400">Robust server-side architecture and frameworks</p>
+          <div className="section-header mb-6 sm:mb-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 className="text-xl sm:text-2xl font-bold text-white mb-1 sm:mb-2">Backend & Server Technologies</h3>
+            <p className="text-gray-400 text-sm sm:text-base">Robust server-side architecture and frameworks</p>
           </div>
           <div className="w-full overflow-hidden">
             <div ref={scrollContainer2Ref} className="flex will-change-transform">
@@ -450,9 +452,9 @@ const Technologies = () => {
 
         {/* Infrastructure Technologies - Left to Right Scroll - Full Width */}
         <div ref={section3Ref} className="mb-16 w-full">
-          <div className="section-header mb-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h3 className="text-2xl font-bold text-white mb-2">Cloud & Infrastructure</h3>
-            <p className="text-gray-400">Scalable cloud solutions and DevOps excellence</p>
+          <div className="section-header mb-6 sm:mb-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 className="text-xl sm:text-2xl font-bold text-white mb-1 sm:mb-2">Cloud & Infrastructure</h3>
+            <p className="text-gray-400 text-sm sm:text-base">Scalable cloud solutions and DevOps excellence</p>
           </div>
           <div className="w-full overflow-hidden">
             <div ref={scrollContainer3Ref} className="flex will-change-transform">

@@ -98,11 +98,11 @@ const Services = () => {
   return (
     <section id="services" className="py-20 bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-6xl text-left font-bold text-white mb-4">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
             <SplitText
               text="Our Services ------"
-              className="text-6xl font-extrabold text-center"
+              className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-center"
               delay={100}
               duration={0.6}
               ease="power3.out"
@@ -123,7 +123,7 @@ const Services = () => {
           onMouseLeave={() => setIsHovered(false)}
         >
           {/* Main Slider */}
-          <div className="relative h-96 mb-8">
+          <div className="relative h-80 sm:h-96 mb-6 sm:mb-8">
             <div 
               className="flex transition-transform duration-700 ease-in-out h-full"
               style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -131,30 +131,32 @@ const Services = () => {
               {services.map((service, index) => (
                 <div
                   key={index}
-                  className="w-full flex-shrink-0 px-4"
+                  className="w-full flex-shrink-0 px-2 sm:px-4"
                 >
-                  <div className={`relative h-full bg-gradient-to-br ${service.gradient} rounded-2xl p-8 overflow-hidden group hover:scale-105 transition-all duration-500`}>
+                  <div className={`relative h-full bg-gradient-to-br ${service.gradient} rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 overflow-hidden group hover:scale-105 transition-all duration-500`}>
                     {/* Animated Background Pattern */}
                     <div className="absolute inset-0 opacity-10">
-                      <div className="absolute top-0 left-0 w-32 h-32 bg-white rounded-full -translate-x-16 -translate-y-16 group-hover:scale-150 transition-transform duration-1000"></div>
-                      <div className="absolute bottom-0 right-0 w-24 h-24 bg-white rounded-full translate-x-12 translate-y-12 group-hover:scale-150 transition-transform duration-1000"></div>
+                      <div className="absolute top-0 left-0 w-24 h-24 sm:w-32 sm:h-32 bg-white rounded-full -translate-x-12 -translate-y-12 sm:-translate-x-16 sm:-translate-y-16 group-hover:scale-150 transition-transform duration-1000"></div>
+                      <div className="absolute bottom-0 right-0 w-16 h-16 sm:w-24 sm:h-24 bg-white rounded-full translate-x-8 translate-y-8 sm:translate-x-12 sm:translate-y-12 group-hover:scale-150 transition-transform duration-1000"></div>
                     </div>
                     
                     {/* Content */}
                     <div className="relative z-10 h-full flex flex-col justify-center items-center text-center text-white">
-                      <div className="mb-6 transform group-hover:scale-110 transition-transform duration-500">
-                        {service.icon}
+                      <div className="mb-4 sm:mb-6 transform group-hover:scale-110 transition-transform duration-500">
+                        <div className="scale-75 sm:scale-100">
+                          {service.icon}
+                        </div>
                       </div>
-                      <h3 className="text-3xl font-bold mb-4 group-hover:text-yellow-200 transition-colors duration-300">
+                      <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 sm:mb-4 group-hover:text-yellow-200 transition-colors duration-300">
                         {service.title}
                       </h3>
-                      <p className="text-lg leading-relaxed max-w-md opacity-90 group-hover:opacity-100 transition-opacity duration-300">
+                      <p className="text-sm sm:text-base md:text-lg leading-relaxed max-w-md opacity-90 group-hover:opacity-100 transition-opacity duration-300 px-2 sm:px-0">
                         {service.description}
                       </p>
                     </div>
 
                     {/* Hover Effect Overlay */}
-                    <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
+                    <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl sm:rounded-2xl"></div>
                   </div>
                 </div>
               ))}
@@ -162,38 +164,38 @@ const Services = () => {
           </div>
 
           {/* Navigation Controls */}
-          <div className="flex justify-center items-center space-x-4 mb-6">
+          <div className="flex justify-center items-center space-x-3 sm:space-x-4 mb-4 sm:mb-6">
             {/* Previous Button */}
             <button
               onClick={prevSlide}
-              className="bg-gray-800/80 hover:bg-gray-700/80 text-white p-3 rounded-full transition-all duration-300 hover:scale-110 shadow-lg"
+              className="bg-gray-800/80 hover:bg-gray-700/80 text-white p-2 sm:p-3 rounded-full transition-all duration-300 hover:scale-110 shadow-lg"
             >
-              <FaChevronLeft size={20} />
+              <FaChevronLeft size={16} className="sm:w-5 sm:h-5" />
             </button>
 
             {/* Auto-play Toggle */}
             <button
               onClick={toggleAutoPlay}
-              className={`p-3 rounded-full transition-all duration-300 hover:scale-110 shadow-lg ${
+              className={`p-2 sm:p-3 rounded-full transition-all duration-300 hover:scale-110 shadow-lg ${
                 isAutoPlay 
                   ? 'bg-blue-600 hover:bg-blue-500 text-white' 
                   : 'bg-gray-800/80 hover:bg-gray-700/80 text-white'
               }`}
             >
-              {isAutoPlay ? <FaPause size={16} /> : <FaPlay size={16} />}
+              {isAutoPlay ? <FaPause size={14} className="sm:w-4 sm:h-4" /> : <FaPlay size={14} className="sm:w-4 sm:h-4" />}
             </button>
 
             {/* Next Button */}
             <button
               onClick={nextSlide}
-              className="bg-gray-800/80 hover:bg-gray-700/80 text-white p-3 rounded-full transition-all duration-300 hover:scale-110 shadow-lg"
+              className="bg-gray-800/80 hover:bg-gray-700/80 text-white p-2 sm:p-3 rounded-full transition-all duration-300 hover:scale-110 shadow-lg"
             >
-              <FaChevronRight size={20} />
+              <FaChevronRight size={16} className="sm:w-5 sm:h-5" />
             </button>
           </div>
 
           {/* Dot Indicators */}
-          <div className="flex justify-center space-x-3">
+          <div className="flex justify-center space-x-2 sm:space-x-3">
             {services.map((_, index) => (
               <button
                 key={index}
@@ -220,22 +222,24 @@ const Services = () => {
         </div>
 
         {/* Service Cards Preview (Mini Cards) */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mt-12">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4 mt-8 sm:mt-12">
           {services.map((service, index) => (
             <div
               key={index}
               onClick={() => goToSlide(index)}
-              className={`cursor-pointer p-4 rounded-xl transition-all duration-300 transform hover:scale-105 ${
+              className={`cursor-pointer p-3 sm:p-4 rounded-lg sm:rounded-xl transition-all duration-300 transform hover:scale-105 ${
                 index === currentIndex
                   ? 'bg-blue-600/20 border-2 border-blue-500'
                   : 'bg-gray-800/60 hover:bg-gray-700/60'
               }`}
             >
               <div className="text-center">
-                <div className="mb-2 flex justify-center opacity-70">
-                  {React.cloneElement(service.icon, { className: "text-2xl" })}
+                <div className="mb-1 sm:mb-2 flex justify-center opacity-70">
+                  <div className="scale-75 sm:scale-100">
+                    {React.cloneElement(service.icon, { className: "text-xl sm:text-2xl" })}
+                  </div>
                 </div>
-                <h4 className="text-sm font-semibold text-white truncate">
+                <h4 className="text-xs sm:text-sm font-semibold text-white truncate">
                   {service.title}
                 </h4>
               </div>
